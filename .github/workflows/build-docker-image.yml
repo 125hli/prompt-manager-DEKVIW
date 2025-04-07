@@ -27,12 +27,12 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t prompt-manager:latest -f Dockerfile .
+        docker build -t dekviw/prompt-manager:latest -f Dockerfile .
 
     - name: Save Docker image to tar file
       run: |
         mkdir -p ./docker-artifact
-        docker save prompt-manager:latest -o ./docker-artifact/prompt-manager.tar
+        docker save dekviw/prompt-manager:latest -o ./docker-artifact/dekviw-prompt-manager.tar
 
     - name: Upload Docker image as artifact
       uses: actions/upload-artifact@v4
